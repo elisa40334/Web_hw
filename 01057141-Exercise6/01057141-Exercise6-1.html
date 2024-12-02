@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Function</title>
+    <style type="text/css">
+        li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        ol {
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        img.dice {
+            width: 100px;
+            height: 100px;
+        }
+
+        img.congrats {
+            width: 440px;
+        }
+
+        #msg {
+            font-family: Helvetica, "Microsoft YaHei", "LiHei Pro", TW-Kai;
+            font-size: 120%;
+            color: navy;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <input id="rollButton" type="button" value="Roll Dice">
+        <input id="cheatButton" type="button" value="Shortcut">
+        <input id="cheatButton2" type="button" value="Shortcut2">
+    </form>
+    <ol>
+        <li><img id="die1" class="dice" src="blank.jpg" alt="blank image"></li>
+        <li><img id="die2" class="dice" src="blank.jpg" alt="blank image"></li>
+        <li><img id="die3" class="dice" src="blank.jpg" alt="blank image"></li>
+        <li><img id="die4" class="dice" src="blank.jpg" alt="blank image"></li>
+    </ol>
+    <div id="msg"></div>
+
+    <script type="text/javascript">
+        var button = document.getElementById("rollButton");
+        button.addEventListener("click",roll,false);
+        var button2 = document.getElementById("cheatButton");
+        button2.addEventListener("click",cheat1,false);
+        var button3 = document.getElementById("cheatButton2");
+        button3.addEventListener("click",cheat2,false);
+        dice1 = document.getElementById("die1");
+        dice2 = document.getElementById("die2");
+        dice3 = document.getElementById("die3");
+        dice4 = document.getElementById("die4");
+        
+        let dicenum = [0,0,0,0];
+        cal = 0;
+
+        function roll(){
+            cal = 0;
+            setimg(dice1);
+            setimg(dice2);
+            setimg(dice3);
+            setimg(dice4);
+            setmsg();
+        }
+
+        function setimg(dice){
+            var num = Math.floor(1+Math.random()*6);
+            dicenum[cal] = num;
+            cal++;
+            dice.setAttribute("src","die" + num +".jpg");
+            dice.setAttribute("alt","dice image with" + num +"spot(s)");
+        }
+
+        function cheat1(){
+            var num = Math.floor(1+Math.random()*6);
+            dicenum = [num,num,num,num];
+            dice1.setAttribute("src","die" + num +".jpg");
+            dice1.setAttribute("alt","dice image with" + num +"spot(s)");
+            dice2.setAttribute("src","die" + num +".jpg");
+            dice2.setAttribute("alt","dice image with" + num +"spot(s)");
+            dice3.setAttribute("src","die" + num +".jpg");
+            dice3.setAttribute("alt","dice image with" + num +"spot(s)");
+            dice4.setAttribute("src","die" + num +".jpg");
+            dice4.setAttribute("alt","dice image with" + num +"spot(s)");
+            setmsg();
+        }
+        function cheat2(){
+            var num = Math.floor(1+Math.random()*6);
+            dicenum = [num,num,6,6];
+            dice1.setAttribute("src","die" + num +".jpg");
+            dice1.setAttribute("alt","dice image with" + num +"spot(s)");
+            dice2.setAttribute("src","die" + num +".jpg");
+            dice2.setAttribute("alt","dice image with" + num +"spot(s)");
+            dice3.setAttribute("src","die" + 6 +".jpg");
+            dice3.setAttribute("alt","dice image with" + 6 +"spot(s)");
+            dice4.setAttribute("src","die" + 6 +".jpg");
+            dice4.setAttribute("alt","dice image with" + 6 +"spot(s)");
+            setmsg();
+        }
+
+        function setmsg(){
+            let texx = document.getElementById("msg");
+            // dicenum[0] = 3,dicenum[1] = 3,dicenum[2] = 3,dicenum[3] = 1;
+            texx.innerHTML = "";
+            if (dicenum[0] == dicenum[1] && dicenum[1] == dicenum[2] && dicenum[2] == dicenum[3]) {
+                texx.innerHTML = "<div>Congratulations!Your roll is”一色“!</div><img class = 'congrats' src = 'congrats.png' >";
+            }
+            else{
+                let a = 0,b = 0,same = 0;
+                for (let i = 0; i < 4; i++) {
+                    for (let j = i+1; j < 4; j++) {
+                        if (dicenum[i] == dicenum[j] || dicenum[i]-100 == dicenum[j] || dicenum[i] == dicenum[j]-100) {
+                            b++;
+                            if (dicenum[j] < 100) {
+                                dicenum[j] += 100;
+                            }
+                            if (dicenum[i] < 100){
+                                dicenum[i] += 100;
+                            }
+                        }
+                        else{
+                            a++;
+                        }
+                    }
+                }
+                // texx.innerHTML = "<div>congratulations!Your roll is“無面”!"+dicenum[0]+":"+dicenum[1]+":"+dicenum[2]+":"+dicenum[3]+"ljfsk</div>";
+                if (a == 6) {
+                    texx.innerHTML = "<div>Congratulations!Your roll is“無面”!</div>";
+                }
+                else if (b >= 1) {
+                    let add = 0,large = 0;
+                    for (let i = 0; i < 4; i++) {
+                        add += dicenum[i];
+                        if (large < dicenum[i]) {
+                            large = dicenum[i];
+                        }
+                    }
+                    // texx.innerHTML = "<div>congratulations!Your roll is“無面”!"+add+"ljfsk</div>";
+                    if (add > 300 && add < 400) {
+                        texx.innerHTML = "<div>No dicision,please re-roll the dice!</div>";
+                    }
+                    else{
+                        if (large*2-200 == 12) {
+                            texx.innerHTML = "<div>Congratulations!Your score is “十八”!</div><img class = 'congrats' src = 'congrats.png' ><div>Your score is "+(large*2-200)+"!</div>";
+                        }
+                        else if (add > 200 && add < 300) {
+                            texx.innerHTML = "<div>Your score is "+(add-(large*2))+"!</div>";
+                        }
+                        else{
+                            texx.innerHTML = "<div>Your score is "+(large*2-200)+"!</div>";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

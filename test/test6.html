@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script type="text/javascript">
+   function creatcanvas(){
+    var side = 100;
+    var tbd = document.getElementById("tbd");
+    for(var i = 0;i < side;i++){
+     var row= document.createElement("tr");
+     for(var j = 0;j < side;j++){
+      var cell = document.createElement("td");
+      row.appendChild(cell);
+     }
+     tbd.appendChild(row);
+    }
+    document.getElementById("canvas").addEventListener("mousemove",process,false);
+   }
+   function process(e){
+    if(e.target.tagName.toLowerCase() == "td"){
+     if(e.ctrlKey){
+      e.target.setAttribute("class","blue");
+     }
+     else if(e.shiftKey){
+      e.target.setAttribute("class","red");
+     }
+    }
+   }
+   window.addEventListener("load",creatcanvas,false)
+  </script>
+  <style type="text/css">
+     div{
+   width: 400px;
+     }
+   .red{
+    background-color: red;
+   }
+   .blue{
+    background-color: blue;
+   }
+  </style>
+ </head>
+ <body>
+  <div style="border: 1px solid;">
+   <table id="canvas">
+    <caption>abs</caption>
+   <tbody id="tbd"></tbody></table>
+  </div>
+ </body>
+</html>

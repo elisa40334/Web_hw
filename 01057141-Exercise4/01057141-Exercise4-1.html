@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>01057141-Exercise4-1</title>
+        <style type="text/css">
+            .a1{
+                color: Firebrick;
+                font-weight: bold;
+            }
+            .a2{
+                color: navy;
+                text-decoration: underline;
+                font-family: "Helvetica";
+            }
+        </style>
+        <script type="text/javascript">
+            let name,year,age;
+            name = window.prompt("Please input your name:");
+            year = window.prompt("Please input your birth year:");
+            age = 2022 - year;
+            document.writeln("<h1>Hello, <span class = 'a1'>" + name + "</span> !<br>");
+            console.log("Hello, " + name + " !");
+            if (isNaN(age) || age <= 0) {
+                document.writeln("Your age is a mystery!</h1>");
+                console.log("Your input is incorrect!");
+                window.alert("Your input is incorrect!");
+            }
+            else{
+                document.writeln("You are <span class = 'a2'>" + age +"</span> years old!</h1>");
+                console.log("You are " + (2022 - year) +" years old!");
+            }
+        </script>
+    </head>
+</html>

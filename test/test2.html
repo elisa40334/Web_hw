@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemons</title>
+        <style type="text/css">
+            #bb{
+                color: white;
+                background-color: aqua;
+            }
+        </style>
+        <script type="text/javascript">
+            function start(){
+                const button = document.getElementById("fight");
+                button.addEventListener("click",fig,false);
+            }
+            function fig(){
+                var str1 = "鋼鐵人 美國隊長 雷神索爾 綠巨人浩克 黑寡婦 洛基 鷹眼"
+                str1 = str1.split(" ")
+                console.log(str1)
+                var str2 = "狠狠地打了 想暗殺 擁抱 無視 閃過 收服了"
+                str2 = str2.split(" ")
+                console.log(str2)
+                var ram1 = Math.floor(Math.random() * 7);
+                var ram2 = Math.floor(Math.random() * 6);
+                var ram3 = Math.floor(Math.random() * 7);
+                while(ram3 == ram1){
+                    ram3 = Math.floor(Math.random() * 7)+1;
+                }
+                console.log(ram1,ram2,ram3)
+                var aa = document.getElementById("aa");
+                aa.innerHTML = str1[ram1] + " ";
+                var bb = document.getElementById("bb");
+                bb.innerHTML = str2[ram2];
+                var cc = document.getElementById("cc");
+                cc.innerHTML = " " + str1[ram3] + "!";
+            }
+            
+            window.addEventListener("load",start,false);
+        </script>
+    </head>
+
+    <body>
+        <span id="aa"></span><span id="bb"></span><span id="cc"></span>
+        <button id="fight">fight!</button>
+    </body>
+</html>

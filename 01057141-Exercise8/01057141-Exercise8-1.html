@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Local Storage</title>
+    <style type="text/CSS">
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            background-color: lightblue;
+            font-family: Perpetua;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        th {
+            text-align: center;
+            color: white;
+            background-color: darkblue;
+        }
+
+        tr.oddrow {
+            background-color: white;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+    <script src="Ex8-1.js"></script>
+</head>
+
+<body>
+    <form action="#">
+        <p>
+            <label>Book Title:
+                <input id="title" type="text" >
+            </label>
+            <label>Author(s):<input id="author" type="text" ></label>
+            <label>Year:<input id="year" type="text" ></label>
+            <label>Book URL:<input id="burl" type="text" ></label>
+        </p>
+        <p>
+            <input type="button" value="Add New Item" id="addButton">
+            <input type="button" value="Remove All Items" id="removeAllButton">
+        </p>
+        
+    </form>
+    <hr>
+    <div id="display"></div>
+</body>
+
+</html>

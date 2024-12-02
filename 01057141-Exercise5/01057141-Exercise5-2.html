@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                border: 1px solid black;
+            }
+        </style>
+        <script>
+            function start(){
+                const buttona = document.getElementById("dtt");
+                buttona.addEventListener("click",dtt,false);
+                const buttonb = document.getElementById("ds");
+                buttonb.addEventListener("click",ds,false);
+                const buttonc = document.getElementById("dss");
+                buttonc.addEventListener("click",dss,false);
+            }window.addEventListener("load",start,false);
+            function dtt(){
+                let b = document.getElementById("num");
+                let a = parseInt(b.value);
+                let obj = document.getElementById("display");
+                obj.innerHTML="";
+                if (a > 10 || a < 0 || isNaN(a)) {
+                    window.confirm("輸入有誤!數值設置為默認值 5。")
+                    a = 5;
+                    b.value = 5;
+                }
+                for (let i = 1; i <= a; i++) {
+                    for (let j = a-i; j >= 1; j--) {
+                        obj.innerHTML += "<img src = 'blank.png' width = '50px'>";
+                    }
+                    for (let j = i; j >= 1; j--) {
+                        obj.innerHTML += "<img src = 'baseball.jpg' width = '50px'>";
+                    }
+                    obj.innerHTML += "<br>";
+                }
+            }
+            function ds(){
+                let a = document.getElementById("num");
+                a = parseInt(a.value);
+                let obj = document.getElementById("display");
+                obj.innerHTML="";
+                if (a > 10 || a < 0 || isNaN(a)) {
+                    window.confirm("輸入有誤!數值設置為默認值 5。")
+                    a = 5;
+                }
+                for (let i = 1; i <= a; i++) {
+                    for (let j = 1; j <= a ; j++) {
+                        obj.innerHTML += "<img src = 'baseball.jpg' width = '50px'>";
+                    }
+                    obj.innerHTML += "<br>";
+                }
+            }
+            function dss(){
+                let a = document.getElementById("num");
+                a = parseInt(a.value);
+                let obj = document.getElementById("display");
+                obj.innerHTML="";
+                let ran;
+                if (a > 10 || a < 0 || isNaN(a)) {
+                    window.confirm("輸入有誤!數值設置為默認值 5。")
+                    a = 5;
+                }
+                for (let i = 0; i < a; i++) {
+                    for (let j = 0; j < a; j++) {
+                        ran = Math.floor((Math.random() * 3) + 1);
+                        if (ran == 1) {
+                            obj.innerHTML += "<img src = 'baseball-x.jpg' width = '50px'>";
+                        }
+                        else{
+                            obj.innerHTML += "<img src = 'baseball.jpg' width = '50px'>";
+                        }
+                    }
+                    obj.innerHTML += "<br>";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <span>Side Length(<= 10):</span>
+        <input id="num" type="number">
+        <input id="dtt" type="button" value="Draw Baseball Triangle">
+        <input id="ds" type="button" value="Draw Baseball Square">
+        <input id="dss" type="button" value="Draw Special Square">
+        <hr>
+        <div id="display"></div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+            img {
+                width: 300px;
+                height: 300px;
+            }
+
+            div, input {
+                font-family: Noto Sans TC, Perpetua, serif;
+                width: 300px;            
+            }
+
+            div {
+                color: darkblue;
+                text-align: center;	
+                font-size: 24px;			
+            }
+
+            input {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        </style>
+        <script type="text/javascript">
+            var toolss = ["任意門", "時光機", "竹蜻蜓", "時光布", "記憶麵包", "縮小燈", "翻譯蒟蒻", "如果電話亭", "穿透環" ,"更衣照相機"];
+            var picc = ["01","02","03","04","05","06","07","08","09","10"];
+            var playm;
+            var picimg;
+            var msg;
+
+            function start() {
+                playm = document.getElementById("music");
+                picimg = document.getElementById("pic");
+                msg = document.getElementById("msg");
+                const buttona = document.getElementById("pick");
+                buttona.addEventListener("click",denden,false);
+            }
+            function denden() {
+                picimg.setAttribute("src","blank.png");
+                picimg.setAttribute("alt","blank");
+                msg.innerHTML = "";
+                playm.play();
+                playm.addEventListener("ended",pickk,false);
+            }
+            function pickk() {
+                let inde = Math.floor(Math.random() * picc.length);
+                picimg.setAttribute("src",picc[inde]+".png");
+                picimg.setAttribute("alt",picc[inde]);
+                msg.innerHTML = "您抽到" + toolss[inde] + "!";
+            }
+            window.addEventListener("load",start,false);
+            
+        </script>
+    </head>
+    <body>
+        <img id = "pic" src="00.png" alt="哆啦A夢">
+        <form action="#">
+            <input id="pick" type="button" value="抽道具">
+        </form>
+        <div id="msg">請按下Button抽出道具</div>
+        <audio id="music" preload="auto">
+            <source src="doraemon.mp3" type="audio/mp3">
+        </audio>
+    </body>
+</html>

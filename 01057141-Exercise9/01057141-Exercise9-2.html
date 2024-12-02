@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HW2</title>
+        <script type="text/javascript">
+            var ram1,ram2,ram3,ram4,ram5,ram6,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6;
+            function start(){
+                ram1 = Math.floor((Math.random() * 6) + 1);
+                ram2 = Math.floor((Math.random() * 6) + 1);
+                ram3 = Math.floor((Math.random() * 6) + 1);
+                ram4 = Math.floor((Math.random() * 6) + 1);
+                ram5 = Math.floor((Math.random() * 6) + 1);
+                ram6 = Math.floor((Math.random() * 6) + 1);
+                while (ram2 == ram1) {
+                    ram2 = Math.floor((Math.random() * 6) + 1);
+                }
+                while (ram3 == ram1 || ram3 == ram2) {
+                    ram3 = Math.floor((Math.random() * 6) + 1);
+                }
+                while (ram4 == ram1 || ram4 == ram2 || ram4== ram3) {
+                    ram4 = Math.floor((Math.random() * 6) + 1);
+                }
+                while (ram5 == ram1 || ram5 == ram2 || ram5== ram3 || ram5 == ram4) {
+                    ram5 = Math.floor((Math.random() * 6) + 1);
+                }
+                while (ram6 == ram1 || ram6 == ram2 || ram6== ram3 || ram6 == ram4 || ram6 == ram5) {
+                    ram6 = Math.floor((Math.random() * 6) + 1);
+                }
+                x1 = (Math.random() * 300)+100;
+                y1 = (Math.random() * 300)+100;
+                x2 = (Math.random() * 300)+100;
+                y2 = (Math.random() * 300)+100;
+                x3 = (Math.random() * 300)+100;
+                y3 = (Math.random() * 300)+100;
+                x4 = (Math.random() * 300)+100;
+                y4 = (Math.random() * 300)+100;
+                x5 = (Math.random() * 300)+100;
+                y5 = (Math.random() * 300)+100;
+                x6 = (Math.random() * 300)+100;
+                y6 = (Math.random() * 300)+100;
+                var p1 = document.getElementById("p1");
+                var p2 = document.getElementById("p2");
+                var p3 = document.getElementById("p3");
+                var p4 = document.getElementById("p4");
+                var p5 = document.getElementById("p5");
+                var p6 = document.getElementById("p6");
+                p1.setAttribute("style","z-index:" + ram1 + ";top:" + x1 + "px;left:" + y1 + "px;float:left;position:absolute;");
+                p2.setAttribute("style","z-index:" + ram2 + ";top:" + x2 + "px;left:" + y2 + "px;float:left;position:absolute;");
+                p3.setAttribute("style","z-index:" + ram3 + ";top:" + x3 + "px;left:" + y3 + "px;float:left;position:absolute;");
+                p4.setAttribute("style","z-index:" + ram4 + ";top:" + x4 + "px;left:" + y4 + "px;float:left;position:absolute;");
+                p5.setAttribute("style","z-index:" + ram5 + ";top:" + x5 + "px;left:" + y5 + "px;float:left;position:absolute;");
+                p6.setAttribute("style","z-index:" + ram6 + ";top:" + x6 + "px;left:" + y6 + "px;float:left;position:absolute;");
+            }
+            window.addEventListener("load",start,false);
+            window.setInterval("start()",2000);
+        </script>
+    </head>
+    <body>
+        <img id="p1" src="apple.png" alt="apple">
+        <img id="p2" src="facebook.png" alt="facebook">
+        <img id="p3" src="ibm.png" alt="ibm">
+        <img id="p4" src="microsoft.png" alt="microsoft">
+        <img id="p5" src="google.png" alt="google">
+        <img id="p6" src="yahoo.png" alt="yahoo">
+    </body>
+</html>

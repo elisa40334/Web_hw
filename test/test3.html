@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function start(){
+                var x1 = Math.floor(Math.random()*301)+100;
+                var x2 = Math.floor(Math.random()*301)+100;
+                var x3 = Math.floor(Math.random()*301)+100;
+                var x4 = Math.floor(Math.random()*301)+100;
+                var x5 = Math.floor(Math.random()*301)+100;
+                var x6 = Math.floor(Math.random()*301)+100;
+                var y1 = Math.floor(Math.random()*301)+100;
+                var y2 = Math.floor(Math.random()*301)+100;
+                var y3 = Math.floor(Math.random()*301)+100;
+                var y4 = Math.floor(Math.random()*301)+100;
+                var y5 = Math.floor(Math.random()*301)+100;
+                var y6 = Math.floor(Math.random()*301)+100;
+                var p1 = document.getElementById("p1");
+                var p2 = document.getElementById("p2");
+                var p3 = document.getElementById("p3");
+                var p4 = document.getElementById("p4");
+                var p5 = document.getElementById("p5");
+                var p6 = document.getElementById("p6");
+                p1.setAttribute("style","width:" + x1 + "px;height:" + y1 +"px;position:absolute;")
+                p2.setAttribute("style","width:" + x2 + "px;height:" + y2 +"px;position:absolute;")
+                p3.setAttribute("style","width:" + x3 + "px;height:" + y3 +"px;position:absolute;")
+                p4.setAttribute("style","width:" + x4 + "px;height:" + y4 +"px;position:absolute;")
+                p5.setAttribute("style","width:" + x5 + "px;height:" + y5 +"px;position:absolute;")
+                p6.setAttribute("style","width:" + x6 + "px;height:" + y6 +"px;position:absolute;")
+
+            }
+            window.setInterval("start()",2000);
+            window.addEventListener("load",start,false)
+        </script>
+    </head>
+    <body>
+        <img id="p1" src="00.png" alt="">
+        <img id="p2" src="01.png" alt="">
+        <img id="p3" src="02.png" alt="">
+        <img id="p4" src="03.png" alt="">
+        <img id="p5" src="04.png" alt="">
+        <img id="p6" src="05.png" alt="">
+    </body>
+</html>

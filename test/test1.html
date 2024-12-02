@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemons</title>
+        <style type="text/css">
+        </style>
+        <script type="text/javascript">
+            function start(){
+                const buttona = document.getElementById("pic1");
+                buttona.addEventListener("click", function () {change(1);},false)
+                const buttonb = document.getElementById("pic2");
+                buttonb.addEventListener("click", function () {change(2);},false)
+                const buttonc = document.getElementById("pic3");
+                buttonc.addEventListener("click", function () {change(3);},false)
+                const buttond = document.getElementById("pic4");
+                buttond.addEventListener("click", function () {change(4);},false)
+                const buttone = document.getElementById("pic5");
+                buttone.addEventListener("click", function () {change(5);},false)
+                const buttonf = document.getElementById("pic6");
+                buttonf.addEventListener("click", function () {change(6);},false)
+                const buttong = document.getElementById("pic7");
+                buttong.addEventListener("click", function () {change(7);},false)
+                const buttonh = document.getElementById("pic8");
+                buttonh.addEventListener("click", function () {change(8);},false)
+                const buttoni = document.getElementById("pic9");
+                buttoni.addEventListener("click", function () {change(9);},false)
+                const buttonk = document.getElementById("pic10");
+                buttonk.addEventListener("click", function () {change(10);},false)
+            }
+            function change(pic){
+                var list = ["0","01","02","04","5","6","7","8","9","10"]
+                var chan = document.getElementById("chan");
+                chan.setAttribute("src","0"+pic+".png")
+                var text = document.getElementById("text");
+                text.innerHTML = list[pic]
+            }
+
+            window.addEventListener("load",start,false)
+        </script>
+    </head>
+
+    <body>
+        <div id="text">
+            多拉
+        </div>
+        <div>
+            <img id="chan" src="00.png" alt="">
+        </div>
+        
+       <button id="pic1"><img src="01.png" alt="" width="100px"></button>
+       <button id="pic2"><img src="02.png" alt="" width="100px"></button>
+       <button id="pic3"><img src="03.png" alt="" width="100px"></button>
+       <button id="pic4"><img src="04.png" alt="" width="100px"></button>
+       <button id="pic5"><img src="05.png" alt="" width="100px"></button>
+       <button id="pic6"><img src="06.png" alt="" width="100px"></button>
+       <button id="pic7"><img src="07.png" alt="" width="100px"></button>
+       <button id="pic8"><img src="08.png" alt="" width="100px"></button>
+       <button id="pic9"><img src="09.png" alt="" width="100px"></button>
+       <button id="pic10"><img src="10.png" alt="" width="100px"></button>
+    </body>
+</html>

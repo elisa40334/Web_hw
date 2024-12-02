@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>海大</title>
+        <style type="text/css">
+            body{
+                color: white;
+                font-family: Helvetica,sans-serif;
+            }
+            a{
+                color: white;
+                text-decoration: none
+            }
+            a:hover{
+                color: navy;
+                background-color:  lightblue;
+                width: bold;
+                text-decoration: underline;
+            }
+            .imgaa{
+                position: absolute;
+                z-index: 1;
+            }
+            .imgbb{
+                position: absolute;
+                z-index: 2;
+                left: 820px;
+                width: 100px;
+                height: 100px;
+            }
+            .tt{
+                z-index: 3;
+                position: absolute;
+            }
+            .imgcc{
+                top: 4px;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="ntou.jpg" class="imgaa" alt="">
+        <img src="ntou_logo.png" class="imgbb" alt="">
+        <div class="tt">
+            <h1>
+                <strong>
+                    Here are my favorite sites
+                </strong>
+            </h1>
+            <p>
+                click on a name to go to the website
+            </p>
+            <p>
+                <a href="https://www.google.com" target="_blank"><img src="link.png" width="20px" height="20px" class="imgcc">Google</a><br>
+            </p>
+            <p>
+                <a href="https://www.facebook.com" target="_blank"><img src="link.png" width="20px" height="20px" class="imgcc">Facebook</a><br>
+            </p>
+            <p>
+                <a href="https://www.youtube.com/" target="_blank"><img src="link.png" width="20px" height="20px" class="imgcc">Youtube</a>
+            </p>
+        </div>
+        
+        
+    </body>
+</html>

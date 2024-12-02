@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic DOM</title>
+    <style type="text/CSS">
+        div {
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+	</style>
+<script>
+    function start(){
+        const DBTbutton = document.getElementById("DBT");
+        DBTbutton.addEventListener("click", Triangle, false);
+        const DBSbutton = document.getElementById("DBS");
+        DBSbutton.addEventListener("click", Square, false);
+        const DSSbutton = document.getElementById("DSS");
+        DSSbutton.addEventListener("click", Special, false);
+    }
+
+    function Triangle(){
+        let numObject = document.getElementById("number");
+        let num = numObject.value;
+        let obj = document.getElementById("obj");
+        obj.innerHTML="";
+
+        if(num<0 || num>10 || isNaN(num)){
+            window.alert("數值超出範圍，自動設定為5！");
+            num = 5;
+        }
+
+        for(i=num; i>0; i--){
+            for(k=1; k<=num; k++){
+                if(k >= i) obj.innerHTML += '<img src="baseball.jpg"  width="50px" height="50px">';
+                else obj.innerHTML += '<img src="blank.png"  width="50px" height="50px">';
+            }
+            obj.innerHTML += '<br>';
+        }
+    }
+
+    function Square(){
+        let numObject = document.getElementById("number");
+        let num = numObject.value;
+        let obj = document.getElementById("obj");
+        obj.innerHTML="";
+
+        if(num<0 || num>10 || isNaN(num)){
+            window.alert("數值超出範圍，自動設定為5！");
+            num = 5;
+        }
+
+
+
+        for(i=num; i>0; i--){
+            for(k=1; k<=num; k++) obj.innerHTML += '<img src="baseball.jpg"  width="50px" height="50px">';
+            obj.innerHTML += '<br>';
+        }
+    }
+
+    function Special(){
+        let numObject = document.getElementById("number");
+        let num = numObject.value;
+        let obj = document.getElementById("obj");
+        obj.innerHTML="";
+
+        if(num<0 || num>10 || isNaN(num)){
+            window.alert("數值超出範圍，自動設定為5！");
+            num = 5;
+        }
+
+        for(i=num; i>0; i--){
+            for(k=1; k<=num; k++){
+                let n = Math.floor((Math.random()*3)+1);
+                if(n==1) obj.innerHTML += '<img src="baseball-x.jpg"  width="50px" height="50px">';
+                else obj.innerHTML += '<img src="baseball.jpg"  width="50px" height="50px">';
+            }
+            obj.innerHTML += '<br>';
+        }
+    }
+
+    window.addEventListener("load", start, false);
+
+</script>
+    
+</head>
+
+<body>
+        <div>
+            
+            <a>Side Length( <=10):</a>
+            <input id="number" type="text"> 
+            <input id="DBT" type="button" value="Draw Baseball Triangle">
+            <input id="DBS" type="button" value="Draw Baseball Square">
+            <input id="DSS" type="button" value="Draw Special Square">
+            <hr>
+            <p id="obj"></p>
+        </div>
+        
+</body>
+
+</html>

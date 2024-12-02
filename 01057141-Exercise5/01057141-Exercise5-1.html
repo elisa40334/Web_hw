@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>01057141-Exercise5-1</title>
+        <style type="text/css">
+            @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+            h1{
+                font-family: "cwTeXYen";
+                font-size: 50px;
+            }
+            div{
+                font-size: 80px;
+            }
+            .a{
+                color: dodgerblue;
+                border: 1px solid gray;	
+                font-size: 80px;
+                padding: 5px;
+                text-align: center;
+                margin: 5px;	
+                display: inline-block;
+                min-width: 100px;
+            }
+        </style>
+        <script type="text/javascript">
+            let op,num1,num2;
+            op = window.prompt("請輸入算數運算子:1 代表加(+)、2 代表減(-)、3 代表乘(*)、4 代表除(/)");
+            if(op != 1 && op != 2 && op != 3 && op != 4){
+                window.confirm("輸入有誤!選項自動設為 1。");
+                op = 1;
+            }
+            num1 = window.prompt("請輸入第一個數字：");
+            if (isNaN(parseInt(num1))) {
+                window.confirm("輸入有誤!數值自動設定為 1。");
+                num1 = 1;
+            }
+            num2 = window.prompt("請輸入第二個數字：");
+            if (isNaN(parseInt(num2))) {
+                window.confirm("輸入有誤!數值自動設定為 1。");
+                num2 = 1;
+            }
+            document.write("<h1>四則運算結果：</h1>")
+            if (op == 1) {
+                document.writeln("<div><div class = 'a'>"+num1+"</div> + <div class = 'a'>"+num2+"</div> = <div class = 'a'>"+(parseInt(num1)+parseInt(num2))+"</div></div>");
+            }
+            else if (op == 2) {
+                document.writeln("<div><div class = 'a'>"+num1+"</div> - <div class = 'a'>"+num2+"</div> = <div class = 'a'>"+(num1-num2)+"</div></div>");
+            }
+            else if (op == 3) {
+                document.writeln("<div><div class = 'a'>"+num1+"</div> * <div class = 'a'>"+num2+"</div> = <div class = 'a'>"+(num1*num2)+"</div></div>");
+            }
+            else if (op == 4) {
+                document.writeln("<div><div class = 'a'>"+num1+"</div> / <div class = 'a'>"+num2+"</div> = <div class = 'a'>"+(num1/num2).toFixed(2)+"</div></div>");
+            }
+        </script>
+        
+    </head>
+</html>

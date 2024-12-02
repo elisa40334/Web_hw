@@ -1,0 +1,346 @@
+<table  style="width:50%" border="1" >
+    <caption >A Mini Pokemon Gallery</caption>
+     <thead><th>Pokemon</th><th>Picture</th><th>Link</th></thead>
+      <tbody>
+       <tr align="center">
+        <th rowspan="3">Squirtle</th>
+        <td><a href="mailto:01057141@mail.ntou.edu.tw">mailto:01057141@mail.ntou.edu.tw</a></td>
+        <td>bb</td>
+       </tr>
+       </tbody>
+      <tfoot><tr align="center"><td colspan="3">aa</td></tr></tfoot>
+   </table>
+
+   <form method="get" action="https://web-form-2022.herokuapp.com">
+    <p><label>Your name:<input name="fullname" type="text" autofocus placeholder="name" class="aa"></label></p>
+    <p><label>Your birthday date:<input name="date" type="date">(yyyy-mm-dd)</label></p>
+    <p><label>Your favorite color:<input type="color" name="color"></label></p>
+    <p><label>Your Department:
+            <input type="text" name="department" placeholder="select a department" list="department">
+            <datalist id="department">
+                <option value="Department of Aquaculture">
+            </datalist>
+        </label></p>
+    <p>
+        <label><input type="checkbox" name="likes" value="Campus">Campus</label>
+    </p>
+    <p><label><input type="radio" name="interest" value="Friends">Friends</label></p>
+    <p>
+        <input type="submit" value="submit" style="color: firebrick;">
+        <input type="reset" value="clear" style="color: firebrick;">
+    </p>
+</form>
+
+<nav>JavaScript
+    <ul>
+       <li><a href = "https://www.w3schools.com/js/default.asp" target="_blank">W3Schools</a></li>
+       <li><a href = "https://developer.mozilla.org/zh-TW/docs/Web/JavaScript" target="_blank">MDN</a></li>
+       <li><a href = "https://www.json.org/json-en.html" target="_blank">JSON</a></li>
+    </ul>
+ </nav>
+ 嵌入
+ <iframe src="01057141-Exercise3-1.html" frameborder="0" width="100%" height="550px"></iframe>
+音樂
+ <audio id="music" preload="auto">
+    <source src="doraemon.mp3" type="audio/mp3">
+</audio>
+playm = document.getElementById("music");
+playm.play();
+playm.addEventListener("ended",pickk,false);（音樂播完後執行pickk）
+   
+css
+
+nav設定
+nav { font-weight: bold;
+    color: white;
+    border: 2px solid RoyalBlue;
+    text-align: center;
+    width: calc(100%/6);
+    background-color: RoyalBlue; }
+nav ul { display: none;
+    position: absolute;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0; }
+nav:hover ul{ display: block; }
+nav ul li { border-top: 2px solid RoyalBlue;
+    background-color: white;
+    width: 16.6vw;
+    text-align: center;
+    color: black; }
+nav ul li:hover { background-color: PowderBlue; }
+
+字體處理
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+div:first-letter
+.alll1 > div,.alll2 > div
+
+text-align: justify;
+border-style: solid;
+border-color: cornflowerblue;
+overflow: scroll;
+font-size: 2.2em;
+display: contents;
+
+   java
+   
+   window.addEventListener("load",start,false);
+   window.setInterval("start()",2000);
+   p1.setAttribute("style","z-index:" + ram1 + ";");
+   
+   const buttona = document.getElementById("pic1");
+   buttona.addEventListener("click", function () {change(1);},false)
+   
+   var ram1 = Math.floor(Math.random() * 7); #0~6
+   
+   bb.innerHTML = str2[ram2];
+   document.writeln("<img src = 'pikachu.png'>");
+   
+   console.log(str2)
+   
+   設立新節點
+   var newnode = document.createElement("img");
+       newnode.setAttribute("src","0" + pic + ".png");
+       newnode.setAttribute("class","del");
+       newnode.setAttribute("style","left:" + x + "ch;top:" + y +"ch;float:left;position:absolute;z-index:" + (++count) +";")
+       navv.parentNode.insertBefore(newnode,navv);
+
+    隨機不重複編號
+    pic[0] = 0;
+    for (var i = 0; i < 16; i++) {
+        pic[i] = i+1;
+    }
+    pic.sort(function() {return 0.5 - Math.random();});
+
+    window功能
+    name = window.prompt("Please input your name:");
+    window.alert("Your input is incorrect!");
+    window.comfirm("Your input is incorrect!");
+
+    是否為整數
+    isNaN(parseInt(num2))
+
+    int/value處理方法
+    let b = document.getElementById("num");
+    let a = parseInt(b.value);
+    if (a > 10 || a < 0 || isNaN(a)) {
+        window.confirm("輸入有誤!數值設置為默認值 5。")
+        a = 5;
+        b.value = 5;
+    }
+
+    localsorage處理
+    加入
+    function addbook() {
+    
+        var title = document.getElementById("title");
+        var author = document.getElementById("author");
+        var year = document.getElementById("year");
+        var burl = document.getElementById("burl");
+        var str = "";
+        str = '{"title":"'+ title.value +'", "author":"'+ author.value + '", "year":"' + year.value + '", "bookURL":"' + burl.value + '"}';
+        var d = new Date();
+        var t = d.getTime();
+        var name = "ntou-" + t;
+        localStorage.setItem(name,str);
+        title.value = "";
+        author.value = "";
+        year.value = "";
+        burl.value = "";
+        loadSearches();
+    }
+    刪除
+    function removeall() {;
+        for (i = localStorage.length-1; i >= 0 ;i--) {
+            if (localStorage.key(i)[0] == 'n' && localStorage.key(i)[1] == 't' && localStorage.key(i)[2] == 'o' && localStorage.key(i)[3] == 'u' && localStorage.key(i)[4] == '-') {
+                var a = localStorage.key(i);
+                localStorage.removeItem(a);
+            }
+        }
+        window.confirm("All items were removed!");
+        loadSearches();
+    }
+    運行
+    function loadSearches() {
+        var obj = [];
+        var text = document.getElementById("display");
+        var cal = -1;
+        var dis = "";
+        for (i = 0; i < localStorage.length ;i++) {
+            var a = localStorage.key(i);
+            if (a[0] == "n" && a[1] == "t" && a[2] == "o" && a[3] == "u" && a[4] == "-") {
+                obj[++cal] = JSON.parse(localStorage.getItem(a));  
+            }
+            else{
+                obj[++cal] = localStorage.getItem(a); 
+            }
+            // console.log(a[3]);
+        }
+        dis += "<table><tr><th>Title</th><th>Author</th><th>Year</th><th>URL</th></tr>";
+        // console.log(obj[0])
+        if (obj.length >= 1) {
+            var countrow = 0;
+            for (let i = 0; i < obj.length; i++) {
+                if (localStorage.key(i)[0] == 'n' && localStorage.key(i)[1] == 't' && localStorage.key(i)[2] == 'o' && localStorage.key(i)[3] == 'u' && localStorage.key(i)[4] == '-' && countrow%2 == 1) {
+                    dis += "<tr><td>" + obj[i].title + "</td><td>" + obj[i].author + "</td><td>" + obj[i].year + "</td><td><a href='" + obj[i].bookURL + "' target = '_blank'>" + obj[i].bookURL +"</a></td></tr>";  
+                    countrow++;
+                }
+                else if (localStorage.key(i)[0] == 'n' && localStorage.key(i)[1] == 't' && localStorage.key(i)[2] == 'o' && localStorage.key(i)[3] == 'u' && localStorage.key(i)[4] == '-') {
+                    dis += "<tr class = 'oddrow'><td>" + obj[i].title + "</td><td>" + obj[i].author + "</td><td>" + obj[i].year + "</td><td><a href='" + obj[i].bookURL + "' target = '_blank'>" + obj[i].bookURL +"</a></td></tr>";  
+                    countrow++;
+                }
+            }
+        }
+        console.log(dis);
+        dis += "</table>";
+        text.innerHTML = dis;
+    }
+
+
+keyword處理
+<body>
+    <h1>Keyword Extractor</h1>
+    <textarea id="inputText">Please input text here!</textarea>
+    <br>
+    <input type="button" id="convert" value="Extract Keywords" />
+    <h3>Extracted Keywords:</h3>
+    <div id="display"></div>
+    <script>
+        const stopWords = "'ll 's 'm a about above after again against all am an and any are aren't as at be because been before being below between both but by can can't cannot could couldn't did didn't do does doesn't doing don't down during each few for from further had hadn't has hasn't have haven't having he he'd he'll he's her here here's hers herself him himself his how how's i i'd i'll i'm i've if in into is isn't it it's its itself let's me more most mustn't my myself no nor not of off on once only or other ought our ours ourselves out over own same shan't she she'd she'll she's should shouldn't so some such than that that's the their theirs them themselves then there there's these they they'd they'll they're they've this those through to too under until up very was wasn't we we'd we'll we're we've were weren't what what's when when's where where's which while who who's whom why why's with won't would wouldn't you you'd you'll you're you've your yours yourself yourselves ### return arent cant couldnt didnt doesnt dont hadnt hasnt havent hes heres hows im isnt its lets mustnt shant shes shouldnt thats theres theyll theyre theyve wasnt were werent whats whens wheres whos whys wont wouldnt youd youll youre youve".split(" ");
+        const re = /\s|;|,|:|\.|\(|\)/; //空白字元與主要標點符號，用以切割token
+
+        // 註冊convert button之事件處理器        
+        (function start() {
+            document.getElementById("convert").addEventListener("click", generateKeywords, false);
+        })();
+
+        // 將array轉成set以消除重複元素，並轉換出陣列uniqueTokens
+        function convertToUniqueTokens(tokens) {
+            let mySet = new Set(tokens);
+            return Array.from(mySet);
+        }
+
+        // 將uniqueTokens內不適合的token過濾掉。
+        // 如果token是數字或長度<=2，或是stop word (stopWords的元素)，就過濾掉。
+        function filterTokens(uniqueTokens) {
+            // TODO
+            let filteredTokens = [];
+            for (let index = 0; index < uniqueTokens.length; index++) {
+                if (uniqueTokens[index].length > 2 && stopWords.includes(uniqueTokens[index]) == false && isNaN(parseInt(uniqueTokens[index]))) {
+                    filteredTokens.push(uniqueTokens[index]);
+                }
+            }
+            return filteredTokens;
+        }
+
+        // 只留存出現次數大於2的token，並加上出現次數，例如：olympic (20)
+        function produceKeywordsWithCount(filteredTokens, originalTokens) {
+            // TODO
+            let sortedResults = {},sortedResults1 = {};
+            let vall = [];
+            let keyy = [];
+            for (let i = 0; i < filteredTokens.length; i++) {
+                sortedResults[filteredTokens[i]] = 0;
+                for (let j = 0; j < originalTokens.length; j++) {
+                    if (originalTokens[j] == filteredTokens[i]) {
+                        sortedResults[filteredTokens[i]] += 1;
+                    }
+                }
+            }
+            for (let [key,value] of Object.entries(sortedResults)){
+                vall.push(value);
+                keyy.push(key);
+            }
+            for (let i = 0; i < vall.length; i++) {
+                max = i;
+                for (let j = i; j < vall.length; j++) {
+                    if (vall[max] < vall[j]) {
+                        max = j;
+                    }
+                }
+                let temp = keyy[i];
+                keyy[i] = keyy[max];
+                keyy[max] = temp;
+                temp = vall[i];
+                vall[i] = vall[max];
+                vall[max] = temp;
+            }
+            console.log(vall)
+            for (let i = 0; i < keyy.length; i++){
+                sortedResults1[keyy[i]] = vall[i];
+                
+            }
+            return sortedResults1;
+        }
+
+        function generateKeywords() {
+            let text = document.getElementById("inputText").value;
+            // 根據re去切token
+            let tokens = text.toLowerCase().split(re);
+
+            let uniqueTokens = convertToUniqueTokens(tokens);
+            let filteredTokens = filterTokens(uniqueTokens);
+            let sortedResults = produceKeywordsWithCount(filteredTokens, tokens);
+            let result = "";
+
+            if (sortedResults.length != 0) {
+                for (let [key,value] of Object.entries(sortedResults)) {
+                    if (value >= 2) {
+                        result += key + " (" + value + ")<br><hr>";
+                    }
+                }
+                console.log(sortedResults)
+                document.getElementById("display").innerHTML = result;
+            } else {
+                window.alert("No keywords extracted!");
+            }
+        }
+    </script>
+</body>
+
+多拉的布告欄
+var count = 1;
+var pin = ["red","yellow","blue"];
+
+function start() {
+    const buttona = document.getElementById("addButton");
+    buttona.addEventListener("click",add,false);
+    const buttonb = document.getElementById("removeAllButton");
+    buttonb.addEventListener("click",remove,false);
+    loadarray();
+}
+
+function add() {
+    var ram = Math.floor((Math.random() * 3));
+    var cal = localStorage.length;
+    var str = '{"pic":"'+ document.getElementById("pic").value + '","x":"'+ document.getElementById("x").value + '","y":"'+ document.getElementById("y").value + '","ram":"'+ ram + '"}';
+    localStorage.setItem(cal,str);
+    console.log(pic);
+    loadarray();
+}
+function loadarray() {
+    var navv = document.getElementById("nav");
+    var objj = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        objj[i] = localStorage.getItem(localStorage.key(i));
+    }
+    var str = "";
+    for (let i = 0; i < objj.length; i++) {
+        var obj = JSON.parse(objj[i]);
+        console.log(obj)
+        str += "<img src = '0" + obj.pic + ".png' class = 'del' style = 'left:" + obj.x + "px;top:" + obj.y +"px;float:left;position:absolute;z-index:" + (parseInt(localStorage.key(i)) + 1) + ";'>";
+        str +=  "<img src = '" + pin[obj.ram] + ".png' class = 'del' style = 'left:" + (parseInt(obj.x)+85) + "px;top:" + (obj.y-10) +"px;float:left;position:absolute;z-index:" + (parseInt(localStorage.key(i)) + 1) +";' width = '30px'>"
+    }
+    document.getElementById("display").innerHTML = str;
+    console.log(str)
+}
+function remove() {
+    for (i = localStorage.length-1; i >= 0 ;i--) {
+        var a = localStorage.key(i);
+        localStorage.removeItem(a);
+    }
+    loadarray();
+}
+window.addEventListener("load",start,false)
